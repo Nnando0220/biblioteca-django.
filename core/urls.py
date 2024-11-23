@@ -1,5 +1,5 @@
 from django.urls import path, include
-from . import views
+from core import views
 
 urlpatterns = [
     path('livros/', views.LivroList.as_view(), name='livro-list'),
@@ -8,5 +8,7 @@ urlpatterns = [
     path('categoria/<int:pk>/', views.CategoriaDetail.as_view(), name='categoria-detail'),
     path('autor/', views.AutorList.as_view(), name='autor-list'),
     path('autor/<int:pk>/', views.AutorDetail.as_view(), name='autor-detail'),
+    path('colecao/', views.ColecaoList.as_view(), name='colecao-list'),
+    path('colecao/<int:pk>/', views.ColecaoDetail.as_view(), name='colecao-detail'),
     path('', views.ApiRoot.as_view(), name='api-root'),
 ]
